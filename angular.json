@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Anthony-Angatia"
+    }
+  },
+  "defaultProject": "Anthony-Angatia",
+  "cli": {
+    "analytics": false
+  }
 }
