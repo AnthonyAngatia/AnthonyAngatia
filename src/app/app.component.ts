@@ -17,14 +17,15 @@ export class AppComponent {
     }
   title = 'Anthony-Angatia';
   isDark:boolean = false;
-  
-    onSwitch(event: MatSlideToggleChange):void{
-        // console.log(event);
-        
-        this.isDark = event.checked;
-        const hostClass = this.isDark ? 'theme-dark mat-typography' : 'theme-light mat-typography';
-        localStorage.setItem('hostClass', hostClass);
-        this.renderer.setAttribute(this.document.body, 'class', hostClass);
-        
-      }
+  switchTheme(mode:string){
+    if(mode == "dark"){
+      this.isDark = true;
+    }
+    else{
+      this.isDark = false;
+    }
+    const hostClass = this.isDark ? 'theme-dark mat-typography' : 'theme-light mat-typography';
+    localStorage.setItem('hostClass', hostClass);
+    this.renderer.setAttribute(this.document.body, 'class', hostClass);
+  }
 }

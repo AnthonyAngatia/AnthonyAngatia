@@ -5,3 +5,12 @@
     left: 0;
     right: 0;
   }
+  .side-nav{
+    display: table; 
+  }
+  .side-nav-item{
+    padding: 16px;
+  }
+  .side-nav-item > *{
+    text-align: center;
+  }

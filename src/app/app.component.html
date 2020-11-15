@@ -1,15 +1,33 @@
 <mat-sidenav-container class="example-container">
-  <mat-sidenav mode="side" opened style="display: flex; flex-direction: column; align-content: space-around;">
-    <p>Home</p>
-    <p>Code Morsel</p>
-    <p>About Me</p>
+  <mat-sidenav class= "side-nav" mode="side" opened>
+    <div class="side-nav-item">
+      <div>
+        <img src="assets/home.svg" alt="Home" style="height:50px; width:50px;">
+      </div> 
+      <p>Home</p>
+    </div>
+    <div class="side-nav-item">
+      <div>
+        <img src="assets/programming.svg" alt="Home" style="height:50px; width:50px;">
+      </div>
+      <p>Code Morsel</p>
+    </div>
+    <div class="side-nav-item">
+      <div>
+        <img src="assets/about.svg" alt="Home" style="height:50px; width:50px;">
+      </div>
+      <p>About Me</p>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div style=" display: flex; justify-content: flex-end;">
-      <mat-toolbar color="primary" style="width:20%; height:100px; margin-top: 5px; border-radius: 0px 0px 0px 40px;">
-        <span>
-          <mat-slide-toggle (change) = "onSwitch($event)" >Dark mode</mat-slide-toggle>
-        </span>
+      <mat-toolbar color="primary" style="width:15%; height:100px; margin-top: 5px; border-radius: 0px 0px 0px 40px; justify-content: space-around;">
+        <div style=" cursor:pointer;" (click)="switchTheme('dark')" title="Dark theme">
+          <img src="assets/moon.svg" alt="theme" style="height:50px; width:50px;">
+        </div>
+        <div style="cursor:pointer;" (click)="switchTheme('light')" title="Light theme">
+          <img src="assets/sun.svg" alt="theme" style="height:50px; width:50px;">
+        </div>
       </mat-toolbar>
     
     </div>
