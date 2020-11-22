@@ -37,10 +37,9 @@ $dark-theme: mat-dark-theme((
 ));
 $custom-typography: mat-typography-config(
   $font-family: 'Kreon, serif',
-  $headline: mat-typography-level(32px, 48px, 700),
-  $body-1: mat-typography-level(18px, 24px, 400)
+  $body-1: mat-typography-level(24px, 28px, 400)  
 );
-//font-size, line-height, and font-weight
+//font-size, line-height, and font-weight Reference: https://github.com/angular/components/blob/master/guides/typography.md
 @include angular-material-typography($custom-typography);
 
 //! @include angular-material-typography($custom-typography);
@@ -51,7 +50,7 @@ $custom-typography: mat-typography-config(
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body {  }
+// html, body {  }
 
 
 .theme-dark {
@@ -59,4 +58,16 @@ html, body {  }
 }
 .theme-light {
   @include angular-material-color($light-theme);
+}
+
+@import '~highlight.js/styles/an-old-hope.css';
+pre code {
+  border: 1px solid #999;
+  padding: 20px;
+  max-width: 80vw;
+}
+.file-name{
+    width:5em;
+    margin-bottom: -57px;
+    border: 1px solid;
 }

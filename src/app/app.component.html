@@ -1,5 +1,5 @@
 <mat-sidenav-container class="example-container">
-  <mat-sidenav class= "side-nav" mode="side" opened>
+  <mat-sidenav class= "side-nav " mode="side" opened>
     <div class="side-nav-item">
       <div>
         <img src="assets/home.svg" alt="Home" style="height:50px; width:50px;">
@@ -10,7 +10,7 @@
       <div>
         <img src="assets/programming.svg" alt="Home" style="height:50px; width:50px;">
       </div>
-      <p>Code Morsel</p>
+      <p>Code Snippet</p>
     </div>
     <div class="side-nav-item">
       <div>
@@ -31,13 +31,7 @@
       </mat-toolbar>
     
     </div>
-    <div style="margin: auto;text-align: center; ">
-      <div>
-        <h2>Hello World</h2>
-        <h1>I am Anthony Angatia</h1>
-        <h2>Welcome to my world</h2>
-      </div>
-      </div>
-
+    <router-outlet></router-outlet>
+  <!-- Footer -->
   </mat-sidenav-content>
 </mat-sidenav-container>
