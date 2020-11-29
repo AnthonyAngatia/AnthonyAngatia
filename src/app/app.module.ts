@@ -12,6 +12,7 @@ import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
 import { HomeComponent } from './home/home.component';
 
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -22,6 +23,7 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
     AppComponent,
     CodeSnippetComponent,
     HomeComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

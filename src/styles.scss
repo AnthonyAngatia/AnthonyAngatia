@@ -71,3 +71,19 @@ pre code {
     margin-bottom: -57px;
     border: 1px solid;
 }
+a{
+  text-decoration: none;
+  color:inherit;
+  cursor: pointer;
+}
+.div-transition{
+  transition: box-shadow, background-color 0.5s ease 0s;
+}
+.div-transition:hover{
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background-color: #303030;
+  color: white;
+}
+::selection{
+  background-color: #4caf50;
+}

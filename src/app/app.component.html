@@ -1,23 +1,29 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav class= "side-nav " mode="side" opened>
-    <div class="side-nav-item">
+    <a routerLink ="/">
+    <div class="side-nav-item div-transition">
       <div>
         <img src="assets/home.svg" alt="Home" style="height:50px; width:50px;">
       </div> 
       <p>Home</p>
     </div>
-    <div class="side-nav-item">
+  </a>
+  <a routerLink ="/snippets">
+    <div class="side-nav-item div-transition">
       <div>
         <img src="assets/programming.svg" alt="Home" style="height:50px; width:50px;">
       </div>
       <p>Code Snippet</p>
     </div>
-    <div class="side-nav-item">
+  </a>
+  <a routerLink ="/about">
+    <div class="side-nav-item div-transition">
       <div>
         <img src="assets/about.svg" alt="Home" style="height:50px; width:50px;">
       </div>
       <p>About Me</p>
     </div>
+  </a>
   </mat-sidenav>
   <mat-sidenav-content>
     <div style=" display: flex; justify-content: flex-end;">
