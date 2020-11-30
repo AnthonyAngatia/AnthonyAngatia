@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -24,6 +25,7 @@ import { AboutComponent } from './about/about.component';
     CodeSnippetComponent,
     HomeComponent,
     AboutComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
