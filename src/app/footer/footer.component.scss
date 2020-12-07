@@ -4,7 +4,10 @@
 .footer > div{
 padding: 1em;
 margin:auto;
-background-color: #424242;
-background-image: url("/assets/brick-wall.svg");
+border:8px ;
+border-style: double dotted;
 max-width:40vw;
+}
+.icon-height{
+    height:25px;
 }
