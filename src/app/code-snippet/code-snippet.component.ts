@@ -18,6 +18,13 @@ export class CodeSnippetComponent implements OnInit {
   }
   response: HighlightResult;
 
+  angularJsonFn=`angular.json`;
+  angularJson = `
+    "styles": [
+    "src/custom-theme.scss",
+    "src/styles.css"
+  ],`;
+
   str = `
   import { Component, OnInit } from '@angular/core';
   import { HighlightResult } from 'ngx-highlightjs';
@@ -57,7 +64,7 @@ export class CodeSnippetComponent implements OnInit {
 
   // Create the theme object. A theme consists of configurations for individual
   // theming systems such as "color" or "typography".
-  $theme-test-theme: mat-light-theme((
+  $light-theme: mat-light-theme(( //!Changed the variable name to light theme
     color: (
       primary: $theme-test-primary,
       accent: $theme-test-accent,

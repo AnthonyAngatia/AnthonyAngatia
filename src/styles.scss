@@ -46,7 +46,7 @@ $custom-typography: mat-typography-config(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-// @include angular-material-theme($dark-theme);
+// @include angular-material-theme($dark-theme);//remove this to avoid duplication
 
 /* You can add global styles to this file, and also import other style files */
 

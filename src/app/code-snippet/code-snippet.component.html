@@ -16,13 +16,13 @@
     </div>
     <div>
         <div>
-            <p>The following code snippet is a step by step walkthrough on how to create multiple themes using Angular material. This walkthrough has an example for situations where you are using css or scss</p>
+            <p>The following code snippet is a step by step walkthrough on how to create dark theme using Angular material. This walkthrough has an example for situations where you are using css or scss as your styling method</p>
         </div>
         <div class="heading2">
             <h1 class="mat-display-2" >Step 1</h1>
         </div>
         <div>
-            <p>Add angular material and select scss as your prefered styling method.</p>
+            <p>Add angular material and select scss as your preferred styling method.</p>
         </div>
         <div>
           <pre>
@@ -31,9 +31,20 @@
           </pre>
       </div>
         <div>
-          <p>You are provided with an option to choose a theme. Angular material comes with a pre-defined themes. When you choose custom theme a new file named custom-theme.scss will be provided. However, when you select a theme, the custom-theme.scss file is not provided.</p>
-          <p>Lets start with scenario 1 where you choose custom theme. I would recommend this since you will easily be able to change your theme. The custom-theme.scss file  gives you an option of modifying your theme.</p>
+          <p>Choose a theme. You can select one of the pre-defined theme provided or custom theme </p>
+          <!-- <p>You are provided with an option to choose a theme. Angular material comes with a pre-defined themes. When you choose custom theme a new file named custom-theme.scss will be provided. However, when you select a theme, the custom-theme.scss file is not provided.</p>
+          <p>Lets start with scenario 1 where you choose custom theme. I would recommend this since you will easily be able to change your theme. The custom-theme.scss file  gives you an option of modifying your theme.</p> -->
         </div>
+        <p>Select the styling type. If you choose css, you will have to create a new .scss file(in my case custom-theme.scss) and add it to angular.json file as shown below.</p>
+        <div>
+          <pre>
+              <span class="file-name" [highlight] = "angularJsonFn"></span>
+              <code [highlight]="angularJson" (highlighted)="onHighlight($event)" [lineNumbers]="false"></code>
+          </pre>
+      </div>
+      <p>Paste the below boilerplate code in your custom-theme.scss</p>
+      <p>Incase you chose .scss as your default style, copy the below boilerplate code in your styles.scss file</p>
+      <p>If you selected custom-theme when choosing a theme, a new file named custom-theme.scss will be formed as below</p>
         <div>
           <pre>
               <span class="file-name" [highlight] = "customThemeFn"></span>
@@ -45,7 +56,7 @@
              The output of this function is then passed to the angular-material-theme mixin, which will output all of the corresponding styles for the theme.<span><a href="https://material.angular.io/guide/theming#defining-a-custom-theme" target="blank"> Defining custom theme</a></span></p>
       </div>
       <div>
-        <p>Define the mat-dark-theme() as shown below. Note that you can customise your theme in other ways.</p>
+        <p>Define the mat-dark-theme() as shown below.</p>
       </div>
       <div>
         <pre>
@@ -55,7 +66,11 @@
     </div>
     <div>
       <p>Define 2 css classes one for light theme and the other for dark theme</p>
-      <p>Since we are only going to change the color and not the entire theme, we will pass the theme mixins to the function angular-material-color(). If you pass it to the function angular-material-theme(), you get a duplication warning on your terminal. For more information on this check out:<span><a href="" target="blank">Duplicating themes</a></span></p>
+      <p>Since we are only going to change the color and not the entire theme, we will pass the theme mixins to the function angular-material-color() function.
+         If you pass it to the function angular-material-theme(), you get a duplication warning on your terminal. For more information on this check out:<span>
+           <a href="https://github.com/angular/components/blob/master/guides/duplicate-theming-styles.md" target="blank">Duplicating themes</a></span>
+          </p>
+          <p>Remember to change the light theme varibale to $light-theme</p>
 
     </div>
 
