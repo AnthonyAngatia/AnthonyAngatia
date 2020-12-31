@@ -37,7 +37,7 @@ $dark-theme: mat-dark-theme((
 ));
 $custom-typography: mat-typography-config(
   $font-family: 'Kreon, serif',
-  $body-1: mat-typography-level(24px, 28px, 400)
+  $body-1: mat-typography-level(24px, 48px, 400),
 );
 //font-size, line-height, and font-weight Reference: https://github.com/angular/components/blob/master/guides/typography.md
 @include angular-material-typography($custom-typography);
@@ -87,3 +87,21 @@ a{
 ::selection{
   background-color: #4caf50;
 }
+$custom-typography2: mat-typography-config(
+  $font-family: 'Kreon, serif',
+  $display-4: mat-typography-level(42px, 48px, 400),
+  $display-3: mat-typography-level(36px, 48px, 400),
+  $display-2: mat-typography-level(28px, 48px, 400),
+  $display-1: mat-typography-level(24px, 48px, 400),
+  $body-1: mat-typography-level(22px, 48px, 400),
+);
+@media only screen and (max-width: 600px) {
+
+    @include angular-material-typography($custom-typography2);
+
+
+}
+
+
+
+

@@ -1,33 +1,58 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav class= "side-nav " mode="side" opened>
     <a routerLink ="/">
-    <div class="side-nav-item div-transition">
-      <div>
-        <img src="assets/home.svg" alt="Home" style="height:50px; width:50px;">
-      </div> 
-      <p>Home</p>
-    </div>
-  </a>
-  <a routerLink ="/snippets">
-    <div class="side-nav-item div-transition">
-      <div>
-        <img src="assets/programming.svg" alt="Home" style="height:50px; width:50px;">
+      <div class="side-nav-item div-transition">
+        <div>
+          <img src="assets/home.svg" alt="Home" style="height:50px; width:50px;">
+        </div>
+        <p>Home</p>
       </div>
+    </a>
+    <a routerLink ="/snippets">
+      <div class="side-nav-item div-transition">
+        <div>
+         <img src="assets/programming.svg" alt="Home" style="height:50px; width:50px;">
+        </div>
       <p>Code Snippet</p>
-    </div>
-  </a>
-  <a routerLink ="/about">
-    <div class="side-nav-item div-transition">
-      <div>
-        <img src="assets/about.svg" alt="Home" style="height:50px; width:50px;">
       </div>
-      <p>About Me</p>
-    </div>
-  </a>
+    </a>
+    <a routerLink ="/about">
+      <div class="side-nav-item div-transition">
+        <div>
+          <img src="assets/about.svg" alt="Home" style="height:50px; width:50px;">
+        </div>
+        <p>About Me</p>
+      </div>
+    </a>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div style=" display: flex; justify-content: flex-end;">
-      <mat-toolbar color="primary" style="width:15%; height:100px; margin-top: 5px; border-radius: 0px 0px 0px 40px; justify-content: space-around;">
+
+    <div class="nav-bar">
+      <mat-drawer #drawer class ="drawer" >
+        <button mat-icon-button class="example-icon" aria-label="Close" (click)="drawer.toggle()">
+          <mat-icon >close</mat-icon>
+        </button>
+        <a routerLink ="/" (click)="drawer.toggle()" >
+          <div class="side-nav-item div-transition">
+            <p>Home</p>
+          </div>
+        </a>
+        <a routerLink ="/snippets" (click)="drawer.toggle()">
+          <div class="side-nav-item div-transition">
+          <p>Code Snippet</p>
+          </div>
+        </a>
+        <a routerLink ="/about" (click)="drawer.toggle()">
+          <div class="side-nav-item div-transition">
+            <p>About Me</p>
+          </div>
+        </a>
+      </mat-drawer>
+
+      <mat-toolbar color="primary" class="toolbar">
+        <button  class="menu-btn" mat-icon-button  aria-label="Example icon-button with menu icon" (click)="drawer.toggle()" >
+          <mat-icon>menu</mat-icon>
+        </button>
         <div style=" cursor:pointer;" (click)="switchTheme('dark')" title="Dark theme">
           <img src="assets/moon.svg" alt="theme" style="height:50px; width:50px;">
         </div>
@@ -35,7 +60,7 @@
           <img src="assets/sun.svg" alt="theme" style="height:50px; width:50px;">
         </div>
       </mat-toolbar>
-    
+
     </div>
     <router-outlet></router-outlet>
   <!-- Footer -->

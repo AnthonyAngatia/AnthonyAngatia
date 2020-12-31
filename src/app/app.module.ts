@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
 import { HomeComponent } from './home/home.component';
 
@@ -34,6 +36,8 @@ import { FooterComponent } from './footer/footer.component';
     MatSidenavModule,
     MatToolbarModule,
     MatSlideToggleModule,
+    MatIconModule,
+    MatButtonModule,
     HighlightModule
 
   ],
