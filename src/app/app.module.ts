@@ -50,16 +50,20 @@ import { environment } from 'src/environments/environment';
   ],
   providers: [{
     provide: HIGHLIGHT_OPTIONS,
-    // useValue: {
-    //   fullLibraryLoader: () => import('highlight.js'),
-    // }//For importing all the languages
+      // useValue: {
+      //   fullLibraryLoader: () => import('highlight.js'),
+      // }//For importing all the languages
     useValue: {
       coreLibraryLoader: () => import('highlight.js/lib/core'),
       lineNumbersLoader: () => import('highlightjs-line-numbers.js'), // Optional, only if you want the line numbers
       languages: {
         typescript: () => import('highlight.js/lib/languages/typescript'),
         css: () => import('highlight.js/lib/languages/css'),
-        javascript: () => import('highlight.js/lib/languages/javascript')}
+        javascript: () => import('highlight.js/lib/languages/javascript'),
+        scss: () => import('highlight.js/lib/languages/scss'),
+        bash:() => import('highlight.js/lib/languages/bash'),
+        xml: () => import('highlight.js/lib/languages/xml'),
+      }
     }
   }],
   bootstrap: [AppComponent]
