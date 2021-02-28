@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -21,22 +20,26 @@ $Anthony-Angatia-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$light-theme: mat-light-theme((
-  color: (
-    primary: $Anthony-Angatia-primary,
-    accent: $Anthony-Angatia-accent,
-    warn: $Anthony-Angatia-warn,
+$light-theme: mat-light-theme(
+  (
+    color: (
+      primary: $Anthony-Angatia-primary,
+      accent: $Anthony-Angatia-accent,
+      warn: $Anthony-Angatia-warn,
+    ),
   )
-));
-$dark-theme: mat-dark-theme((
-  color: (
-    primary: $Anthony-Angatia-primary,
-    accent: $Anthony-Angatia-accent,
-    warn: $Anthony-Angatia-warn,
+);
+$dark-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $Anthony-Angatia-primary,
+      accent: $Anthony-Angatia-accent,
+      warn: $Anthony-Angatia-warn,
+    ),
   )
-));
+);
 $custom-typography: mat-typography-config(
-  $font-family: 'Kreon, serif',
+  $font-family: "Kreon, serif",
   $body-1: mat-typography-level(24px, 48px, 400),
 );
 //font-size, line-height, and font-weight Reference: https://github.com/angular/components/blob/master/guides/typography.md
@@ -52,7 +55,6 @@ $custom-typography: mat-typography-config(
 
 // html, body {  }
 
-
 .theme-dark {
   @include angular-material-color($dark-theme);
 }
@@ -60,35 +62,31 @@ $custom-typography: mat-typography-config(
   @include angular-material-color($light-theme);
 }
 
-@import '~highlight.js/styles/vs2015.css';
-pre code {
-  border: 1px solid #999;
-  padding: 20px;
-  max-width: 80vw;
+@import "~highlight.js/styles/vs2015.css";
+
+.file-name {
+  width: fit-content;
+  margin-bottom: -57px;
+  border: 1px solid;
 }
-.file-name{
-    width:fit-content;
-    margin-bottom: -57px;
-    border: 1px solid;
-}
-a{
+a {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
   cursor: pointer;
 }
-.div-transition{
+.div-transition {
   transition: box-shadow, background-color 0.5s ease 0s;
 }
-.div-transition:hover{
+.div-transition:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background-color: #303030;
   color: white;
 }
-::selection{
+::selection {
   background-color: #4caf50;
 }
 $custom-typography2: mat-typography-config(
-  $font-family: 'Kreon, serif',
+  $font-family: "Kreon, serif",
   $display-4: mat-typography-level(42px, 48px, 400),
   $display-3: mat-typography-level(36px, 48px, 400),
   $display-2: mat-typography-level(28px, 48px, 400),
@@ -96,11 +94,5 @@ $custom-typography2: mat-typography-config(
   $body-1: mat-typography-level(22px, 48px, 400),
 );
 @media only screen and (max-width: 600px) {
-
-    @include angular-material-typography($custom-typography2);
-
+  @include angular-material-typography($custom-typography2);
 }
-
-
-
-
