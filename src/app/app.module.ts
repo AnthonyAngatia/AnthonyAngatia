@@ -20,11 +20,13 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { environment } from 'src/environments/environment';
 import { MarkdownModule } from 'ngx-markdown';
+import {MatCardModule} from '@angular/material/card';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 import "node_modules/prismjs/components/prism-typescript.min.js"
-import "node_modules/prismjs/components/prism-typescript.min.js"
+import "node_modules/prismjs/components/prism-typescript.min.js";
+import { SnippetDisplayComponent } from './snippet-display/snippet-display.component'
 
 
 
@@ -38,6 +40,7 @@ import "node_modules/prismjs/components/prism-typescript.min.js"
     HomeComponent,
     AboutComponent,
     FooterComponent,
+    SnippetDisplayComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -51,6 +54,7 @@ import "node_modules/prismjs/components/prism-typescript.min.js"
     MatSlideToggleModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
     MarkdownModule.forRoot(
       {loader: HttpClient}
     ),

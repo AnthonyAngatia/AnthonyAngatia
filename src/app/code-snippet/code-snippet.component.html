@@ -3,16 +3,31 @@
         text-align: center;
     }
     a{
-        text-decoration: underline #4caf50;
-    color: #4caf50;
+        /* text-decoration: underline #4caf50;
+    color: #4caf50; */
+    }
+    .card{
+      cursor: pointer;
     }
 </style>
 
+
 <div style="padding: 16px; margin:1em;">
+  <div class="card">
+    <a routerLink="/dark-theme-angular-material">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Creating dark theme using Angular Material</mat-card-title>
+        <mat-card-subtitle>How to create a dark theme using Angular Material</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </a>
+
+  </div>
 
 
 
-    <div class="heading1">
+    <!-- <div class="heading1">
         <h1 class="mat-display-3" >Creating dark theme using Angular Material</h1>
     </div>
     <markdown ngPreserveWhitespaces>
@@ -23,6 +38,6 @@
       ```
     </markdown>
     <markdown [src] = "'assets/TEST.md'">
-    </markdown>
+    </markdown> -->
 
 </div>
