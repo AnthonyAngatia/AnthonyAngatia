@@ -1,50 +1,15 @@
-
 [
   {
-  "snippetNo":1,
+  "snippetId":2,
   "title":"Creating a dark theme with Angular Material",
-  "sub-title":"How to use theme your angular application using Angular Material",
-  "route":"create-dark-theme-in-angular-and-angular-material",
-  "date" : "Feb 18,2018",
+  "subTitle":"How to use theme your angular application using Angular Material",
+  "route":"create-dark-theme-with-angular-and-angular-material",
+  "date" : "Feb 17,2020",
   "tags":[
     "angular","angular-material"
   ],
-  "snippet":"TEST.md"
-  },
-  {
-  "snippetNo":2,
-  "title":"Creating a dark theme with Angular Material",
-  "sub-title":"How to use theme your angular application using Angular Material",
-  "route":"create-dark-theme-in-angular-and-angular-material",
-  "date" : "Feb 17,2020",
-  "tags":[
-    "angular","firebase"
-  ],
-  "snippet":"TEST.md"
-  },
-  {
-    "snippetNo":3,
-    "title" : "Creating Dark Theme using Angular Material",
-    "sub_title":"How to create a dark theme using angular material",
-    "route":"create-dark-theme-in-angular-and-angular-material",
-    "date" : "Feb 17,2020",
-    "tags" : [
-      "angular",
-      "javascript"
-    ],
-    "snippet":"TEST.md"
-  },
-  {
-    "snippetNo":4,
-    "title" : "Creating Dark Theme using Angular Material",
-    "sub_title":"How to create a dark theme using angular material",
-    "route":"create-dark-theme-in-angular-and-angular-material",
-    "date" : "02-03-2021",
-    "tags" : [
-      "angular",
-      "node"
-    ],
-    "snippet":"TEST.md"
+  "snippet":"TEST.md",
+  "author":"Anthony Angatia",
+  "readTime":"3 min"
   }
 ]
-

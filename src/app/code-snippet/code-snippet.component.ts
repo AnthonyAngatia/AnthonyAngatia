@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ISnippet } from './snippet';
 import { SnippetService } from './snippet.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { SnippetService } from './snippet.service';
   styleUrls: ['./code-snippet.component.scss']
 })
 export class CodeSnippetComponent implements OnInit {
-  snippets:any[];//Array of a snippet interface
+  snippets:ISnippet[];//Array of a snippet interface
   tagClassExpression:string[] = [];
 
 
@@ -21,7 +22,7 @@ export class CodeSnippetComponent implements OnInit {
         }
         this.snippets = Object.values(snippets);
       },
-      error: err => console.error("An error occurred retrieving the snippets")
+      error: err => console.error("An error occurred retrieving the snippets"+err)
     });
 
   }

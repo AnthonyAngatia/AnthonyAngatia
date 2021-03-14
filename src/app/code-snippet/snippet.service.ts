@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from "rxjs";
 import {catchError, tap} from 'rxjs/operators'
+import { ISnippet } from './snippet';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class SnippetService {
   constructor(private http: HttpClient) {
 
    }
-   getSnippets(){
-     return this.http.get(this.snippetUrl).pipe(
+   getSnippets(): Observable<ISnippet[]>{
+     return this.http.get<ISnippet[]>(this.snippetUrl).pipe(
        tap(data =>{}),
        catchError(this.handleError)
      )
