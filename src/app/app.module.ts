@@ -27,6 +27,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import "node_modules/prismjs/components/prism-typescript.min.js"
 import "node_modules/prismjs/components/prism-typescript.min.js";
 import { SnippetDisplayComponent } from './snippet-display/snippet-display.component'
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -55,6 +56,7 @@ import { SnippetDisplayComponent } from './snippet-display/snippet-display.compo
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    FormsModule,
     MarkdownModule.forRoot(
       {loader: HttpClient}
     ),

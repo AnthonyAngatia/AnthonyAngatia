@@ -2,24 +2,29 @@
     .heading1{
         text-align: center;
     }
-    a{
-        /* text-decoration: underline #4caf50;
-    color: #4caf50; */
-    }
     .card{
       cursor: pointer;
+    }
+    .card-margin{
+      margin:1em 1em;
     }
 </style>
 
 
 <div style="padding: 16px; margin:1em;">
-  <div class="card">
-    <a routerLink="/dark-theme-angular-material">
+  <div class="card card-margin" *ngFor="let item of snippets">
+    <a [routerLink]="['/snippets', item.route]">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Creating dark theme using Angular Material</mat-card-title>
-        <mat-card-subtitle>How to create a dark theme using Angular Material</mat-card-subtitle>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+        <mat-card-subtitle>{{ item.sub_title }}</mat-card-subtitle>
       </mat-card-header>
+      <mat-card-actions>
+        <a *ngFor="let tag of item.tags" [routerLink] ="['/snippets', tag.name]">
+          <span class="tag" [class]= "tag.classexpression">#{{ tag.name }}</span>
+        </a>
+      </mat-card-actions>
+
     </mat-card>
   </a>
 

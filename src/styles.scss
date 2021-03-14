@@ -86,6 +86,24 @@ a {
 ::selection {
   background-color: #4caf50;
 }
+.tag {
+  border-radius: 2px;
+  padding: 4px 12px;
+  margin: 2px 1em 2px 0em;
+  background-color: #303030;
+}
+.tag-angular {
+  background-color: #c3002f;
+}
+.tag-angular-material {
+  background-color: #3f51b5;
+}
+.tag-javascript {
+  background-color: #efd81d;
+}
+.tag-node {
+  background-color: #75ad64;
+}
 $custom-typography2: mat-typography-config(
   $font-family: "Kreon, serif",
   $display-4: mat-typography-level(42px, 48px, 400),

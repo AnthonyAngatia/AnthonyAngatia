@@ -11,7 +11,7 @@ const routes: Routes = [
     component: CodeSnippetComponent, // this is the component with the <router-outlet> in the template
   },
   {
-    path: 'dark-theme-angular-material', // child route path
+    path: 'snippets/:snippetTitle', // child route path dark-theme-angular-material
     component: SnippetDisplayComponent, // child route component that the router renders
   },
   {path:'about', component: AboutComponent},
