@@ -2,96 +2,47 @@
     .heading1{
         text-align: center;
     }
-    a{
-        text-decoration: underline #4caf50;
-    color: #4caf50;
+    .card{
+      cursor: pointer;
+    }
+    .card-margin{
+      margin:1em 1em;
     }
 </style>
+
+
 <div style="padding: 16px; margin:1em;">
-    <div class="heading1">
+  <div class="card card-margin" *ngFor="let item of snippets">
+    <a [routerLink]="['/snippets', item.route]">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+        <mat-card-subtitle>{{ item.sub_title }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <a *ngFor="let tag of item.tags" [routerLink] ="['/snippets', tag.name]">
+          <span class="tag" [class]= "tag.classexpression">#{{ tag.name }}</span>
+        </a>
+      </mat-card-actions>
+
+    </mat-card>
+  </a>
+
+  </div>
+
+
+
+    <!-- <div class="heading1">
         <h1 class="mat-display-3" >Creating dark theme using Angular Material</h1>
     </div>
-    <div>
-        <div>
-            <p>The following code snippet is a step by step walkthrough on how to create dark theme using Angular material. This walkthrough has an example for situations where you are using css or scss as your styling method</p>
-        </div>
-        <div>
-            <p>Add angular material and select scss as your preferred styling method.</p>
-        </div>
-        <div>
-          <pre>
-              <span class="file-name" [highlight] = "terminal"> </span>
-              <code  [highlight]="command1" (highlighted)="onHighlight($event)" ></code>
-          </pre>
-      </div>
-        <div>
-          <p>Choose a theme. You can select one of the pre-defined theme provided or custom theme </p>
-          <!-- <p>You are provided with an option to choose a theme. Angular material comes with a pre-defined themes. When you choose custom theme a new file named custom-theme.scss will be provided. However, when you select a theme, the custom-theme.scss file is not provided.</p>
-          <p>Lets start with scenario 1 where you choose custom theme. I would recommend this since you will easily be able to change your theme. The custom-theme.scss file  gives you an option of modifying your theme.</p> -->
-        </div>
-        <p>Select the styling type. If you choose css, you will have to create a new .scss file(in my case custom-theme.scss) and add it to angular.json file as shown below.</p>
-        <div>
-          <pre>
-              <span class="file-name" [highlight] = "angularJsonFn"></span>
-              <code [highlight]="angularJson" (highlighted)="onHighlight($event)" [lineNumbers]="false"></code>
-          </pre>
-      </div>
-      <p>Paste the below boilerplate code in your custom-theme.scss</p>
-      <p>Incase you chose .scss as your default style, copy the below boilerplate code in your styles.scss file</p>
-      <p>If you selected custom-theme when choosing a theme, a new file named custom-theme.scss will be formed as below</p>
-        <div>
-          <pre>
-              <span class="file-name" [highlight] = "customThemeFn"></span>
-              <code [highlight]="customTheme" (highlighted)="onHighlight($event)" [lineNumbers]="true">{{str}}</code>
-          </pre>
-      </div>
-      <div>
-        <p>A custom theme file defines a theme data structure as the composition of configurations for the individual theming systems that is, color and typography. This object can be created by either the mat-light-theme function or the mat-dark-theme function.
-             The output of this function is then passed to the angular-material-theme mixin, which will output all of the corresponding styles for the theme.<span><a href="https://material.angular.io/guide/theming#defining-a-custom-theme" target="blank"> Defining custom theme</a></span></p>
-      </div>
-      <div>
-        <p>Define the mat-dark-theme() as shown below.</p>
-      </div>
-      <div>
-        <pre>
-            <span class="file-name" [highlight] = "customThemeFn"></span>
-            <code [highlight]="addCode" (highlighted)="onHighlight($event)" [lineNumbers]="false"></code>
-        </pre>
-    </div>
-    <div>
-      <p>Define 2 css classes one for light theme and the other for dark theme</p>
-      <p>Since we are only going to change the color and not the entire theme, we will pass the theme mixins to the function angular-material-color() function.
-         If you pass it to the function angular-material-theme(), you get a duplication warning on your terminal. For more information on this check out:<span>
-           <a href="https://github.com/angular/components/blob/master/guides/duplicate-theming-styles.md" target="blank">Duplicating themes</a></span>
-          </p>
-          <p>Remember to change the light theme varibale to $light-theme</p>
+    <markdown ngPreserveWhitespaces>
+      ```typescript
+      export function greetings(name: string): string &#123;
+        return 'Hello ' + name;
+      }
+      ```
+    </markdown>
+    <markdown [src] = "'assets/TEST.md'">
+    </markdown> -->
 
-    </div>
-
-    <div>
-      <pre>
-          <span class="file-name" [highlight] = "customThemeFn"></span>
-          <code [highlight]="cssClass" (highlighted)="onHighlight($event)" [lineNumbers]="false"></code>
-      </pre>
-    </div>
-    <div>
-      <p>We are going to toggle this classes when an event occurs. In this example we will add a slide toggle to toggle between the light-theme and dark-theme</p>
-      <p>Below is my app.component.html file</p>
-    </div>
-    <div>
-      <pre>
-          <span class="file-name" [highlight] = "appCompHtmlFn"></span>
-          <code [highlight]="appCompHtml" (highlighted)="onHighlight($event)" [lineNumbers]="false"></code>
-      </pre>
-    </div>
-    <div>
-      <p>Below is my app.component.ts file</p>
-    </div>
-    <div>
-      <pre>
-          <span class="file-name" [highlight] = "appCompTsFn"></span>
-          <code [highlight]="appCompTs" (highlighted)="onHighlight($event)" [lineNumbers]="false"></code>
-      </pre>
-    </div>
-    </div>
 </div>

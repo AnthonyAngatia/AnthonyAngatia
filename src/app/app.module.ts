@@ -16,10 +16,19 @@ import {MatButtonModule} from '@angular/material/button';
 import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
 import { HomeComponent } from './home/home.component';
 
-import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { environment } from 'src/environments/environment';
+import { MarkdownModule } from 'ngx-markdown';
+import {MatCardModule} from '@angular/material/card';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+
+import "node_modules/prismjs/components/prism-typescript.min.js"
+import "node_modules/prismjs/components/prism-typescript.min.js";
+import { SnippetDisplayComponent } from './snippet-display/snippet-display.component'
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -32,9 +41,11 @@ import { environment } from 'src/environments/environment';
     HomeComponent,
     AboutComponent,
     FooterComponent,
+    SnippetDisplayComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    HttpClientModule,
     AngularFireAnalyticsModule,
     BrowserModule,
     AppRoutingModule,
@@ -44,28 +55,16 @@ import { environment } from 'src/environments/environment';
     MatSlideToggleModule,
     MatIconModule,
     MatButtonModule,
-    HighlightModule,
+    MatCardModule,
+    FormsModule,
+    MarkdownModule.forRoot(
+      {loader: HttpClient}
+    ),
+
 
 
   ],
-  providers: [{
-    provide: HIGHLIGHT_OPTIONS,
-      // useValue: {
-      //   fullLibraryLoader: () => import('highlight.js'),
-      // }//For importing all the languages
-    useValue: {
-      coreLibraryLoader: () => import('highlight.js/lib/core'),
-      lineNumbersLoader: () => import('highlightjs-line-numbers.js'), // Optional, only if you want the line numbers
-      languages: {
-        typescript: () => import('highlight.js/lib/languages/typescript'),
-        css: () => import('highlight.js/lib/languages/css'),
-        javascript: () => import('highlight.js/lib/languages/javascript'),
-        scss: () => import('highlight.js/lib/languages/scss'),
-        bash:() => import('highlight.js/lib/languages/bash'),
-        xml: () => import('highlight.js/lib/languages/xml'),
-      }
-    }
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
