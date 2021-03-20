@@ -17,9 +17,7 @@ export class CodeSnippetComponent implements OnInit {
   ngOnInit(): void {
     this.snippetService.getSnippets().subscribe({
       next: snippets => {
-        for( let item of Object.values(snippets)){
-          this.restructureTagArray(item);
-        }
+        snippets = this.restructureTagArray(snippets);
         this.snippets = Object.values(snippets);
       },
       error: err => console.error("An error occurred retrieving the snippets"+err)
@@ -28,20 +26,23 @@ export class CodeSnippetComponent implements OnInit {
   }
 
 
-  private restructureTagArray(item: any) {
-    let tags = []
-    item.tags.forEach(tagElement => {
-      let classExpression: string = 'tag-' + tagElement;
-      this.tagClassExpression.push(classExpression);
-      let tag = {
-        name: "",
-        classexpression: ""
-      };
-      tag.name = tagElement;
-      tag.classexpression = 'tag-' + tagElement;
-      tags.push(tag);
-    });
-    item.tags = tags;
-    tags = [];
+  private restructureTagArray(snippets: any[]): ISnippet[] {
+    for( let item of Object.values(snippets)){
+      let tags = [];
+      item.tags.forEach(tagElement => {
+        let classExpression: string = 'tag-' + tagElement;
+        this.tagClassExpression.push(classExpression);
+        let tag = {
+          name: "",
+          classexpression: ""
+        };
+        tag.name = tagElement;
+        tag.classexpression = 'tag-' + tagElement;
+        tags.push(tag);
+      });
+      item.tags = tags;
+      tags = [];
+      return snippets;
+    }
   }
 }

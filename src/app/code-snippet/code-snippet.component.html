@@ -13,20 +13,21 @@
 
 <div style="padding: 16px; margin:1em;">
   <div class="card card-margin" *ngFor="let item of snippets">
-    <a [routerLink]="['/snippets', item.route]">
     <mat-card>
+      <a [routerLink]="['/snippets', item.route]">
       <mat-card-header>
         <mat-card-title>{{ item.title }}</mat-card-title>
         <mat-card-subtitle>{{ item.sub_title }}</mat-card-subtitle>
       </mat-card-header>
+      </a>
       <mat-card-actions>
-        <a *ngFor="let tag of item.tags" [routerLink] ="['/snippets', tag.name]">
+        <a *ngFor="let tag of item.tags" [routerLink] ="['/snippets/tags']" [queryParams] ="{ tag: tag.name }">
           <span class="tag" [class]= "tag.classexpression">#{{ tag.name }}</span>
         </a>
       </mat-card-actions>
 
+
     </mat-card>
-  </a>
 
   </div>
 
