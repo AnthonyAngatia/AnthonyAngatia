@@ -25,9 +25,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 import "node_modules/prismjs/components/prism-typescript.min.js"
-import "node_modules/prismjs/components/prism-typescript.min.js";
+import "node_modules/prismjs/components/prism-sql.min.js";
+import "node_modules/prismjs/components/prism-javascript.min.js";
+import "node_modules/prismjs/components/prism-json.min.js";
+import "node_modules/prismjs/components/prism-json5.min.js";
+
 import { SnippetDisplayComponent } from './snippet-display/snippet-display.component'
 import { FormsModule } from '@angular/forms';
+import { TagsComponent } from './tags/tags.component';
 
 
 
@@ -42,6 +47,7 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     FooterComponent,
     SnippetDisplayComponent,
+    TagsComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

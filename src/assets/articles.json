@@ -11,5 +11,18 @@
   "snippet":"TEST.md",
   "author":"Anthony Angatia",
   "readTime":"3 min"
-  }
+  },
+  {
+    "snippetId":3,
+    "title":"Creating a dark theme with Angular Material",
+    "subTitle":"How to use theme your angular application using Angular Material",
+    "route":"create-dark-theme-with-angular-and-angular-material",
+    "date" : "Feb 17,2020",
+    "tags":[
+      "java"
+    ],
+    "snippet":"TEST.md",
+    "author":"Anthony Angatia",
+    "readTime":"3 min"
+    }
 ]

@@ -1,5 +1,5 @@
 <style>
-    .heading1{
+  .heading1{
         text-align: center;
     }
     .card{
@@ -12,6 +12,7 @@
       display:grid;
       grid-template-columns: 65% 35%;
     }
+    /* Tag card does not exist inthis html */
     .tag-card{
       margin:1em 1em 1em 0em;
     }
@@ -38,7 +39,7 @@
 
 
 <div class="snippets-tags-grid" style="margin:1em;">
-  <div class="card card-margin" >
+  <div class="card card-margin">
     <mat-card class="mat-card-snippet" *ngFor="let item of snippets">
       <a [routerLink]="['/snippets', item.route]">
       <mat-card-header>
@@ -51,19 +52,6 @@
           <span class="tag" [class]= "tag.classexpression">#{{ tag.name }}</span>
         </a>
       </mat-card-actions>
-    </mat-card>
-
-  </div>
-  <div class="tag-card">
-    <mat-card style="margin: auto;">
-      <mat-card-header style="margin: 0px 0px 12px;">
-        <h1 style="margin:auto">Tags</h1>
-      </mat-card-header>
-      <mat-card-content style="display: flex; flex-wrap: wrap; padding:16px;">
-        <a *ngFor="let tag of tagsArray" [routerLink] ="['/snippets/tags']" [queryParams] ="{ tag: tag.name }">
-          <span class="tag" [class]= "tag.classexpression">#{{ tag.name }}</span>
-        </a>
-      </mat-card-content>
     </mat-card>
   </div>
 </div>
