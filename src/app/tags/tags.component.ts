@@ -10,7 +10,7 @@ import { SnippetService } from '../code-snippet/snippet.service';
   styleUrls: ['./tags.component.scss']
 })
 export class TagsComponent implements OnInit {
-  tag:string;
+  queryParamTag:string;
   snippets:ISnippet[] = [];
   tagClassExpression:string[] = [];
 
@@ -19,7 +19,7 @@ export class TagsComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams
     .subscribe({
-      next:params => this.tag = params.tag,
+      next:params => this.queryParamTag = params.tag,
        error:err=> console.log(err+":Error retrieving queryParam tag")
       });
     this.getSnippets();
@@ -32,7 +32,7 @@ export class TagsComponent implements OnInit {
           data.forEach(element => {
           let tagArr = element.tags;
           for(let tagElement of tagArr){
-            if(tagElement == this.tag){
+            if(tagElement == this.queryParamTag){
               this.snippets.push(element);
               break;
             }
@@ -46,7 +46,6 @@ export class TagsComponent implements OnInit {
   private restructureTagArray(snippets: ISnippet[]): ISnippet[] {
     for( let item of Object.values(snippets)){
       let tags = [];
-      // console.log(item);
       item.tags.forEach(tagElement => {
         let classExpression: string = 'tag-' + tagElement;
         this.tagClassExpression.push(classExpression);
@@ -60,8 +59,8 @@ export class TagsComponent implements OnInit {
       });
       item.tags = tags;
       tags = [];
-      return snippets;
     }
+    return snippets;
   }
 
 

@@ -9,6 +9,7 @@ import { ISnippet } from './snippet';
 })
 export class SnippetService {
   private snippetUrl = 'assets/articles.json';
+  private tagsUrl = 'assets/tags.json';
 
   constructor(private http: HttpClient) {
 
@@ -17,6 +18,12 @@ export class SnippetService {
      return this.http.get<ISnippet[]>(this.snippetUrl).pipe(
        tap(data =>{}),
        catchError(this.handleError)
+     )
+   }
+   getTags():Observable<Object[]>{
+     return this.http.get<ISnippet[]>(this.tagsUrl)
+     .pipe(tap({next: data => {}}),
+     catchError(this.handleError)
      )
    }
    private handleError(err: HttpErrorResponse): Observable<never> {
