@@ -19,4 +19,4 @@ FROM Customers AS c,
 WHERE c.CustomerName='Tony' AND c.CustomerID=o.CustomerID;
 ```
 
-> It is much easier to get the column names with `o` and `c` unlike using the table name
+> It is much easier to get the column names with `o` and `c` unlike using the full table name

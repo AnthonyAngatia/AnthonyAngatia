@@ -92,15 +92,32 @@ a {
 }
 .tag-angular {
   background-color: #c3002f;
+  color: #ffffff;
 }
 .tag-angular-material {
   background-color: #3f51b5;
+  color: #ffffff;
 }
 .tag-javascript {
   background-color: #efd81d;
+  color: #303030;
 }
 .tag-node {
   background-color: #75ad64;
+  color: #303030;
+}
+.tag-sql {
+  background-color: #31648c;
+  color: #ffffff;
+}
+.tag-java {
+  background: rgb(82, 131, 160);
+  background: linear-gradient(
+    90deg,
+    rgba(82, 131, 160, 1) 75%,
+    rgba(248, 153, 23, 1) 100%
+  );
+  color: #ffffff;
 }
 $custom-typography2: mat-typography-config(
   $font-family: "Kreon, serif",

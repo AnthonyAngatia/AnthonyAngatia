@@ -2,7 +2,7 @@
 
 Add angular material and select scss as your preferred styling method. Scss is like a superset of css therefore for those used to css don't shy away. P.S: Stick with css if you have it configured as your default style(Scroll to the last section of this page for more).
 
-```terminal
+```bash
 ng add @angular/material
 ```
 
@@ -147,5 +147,3 @@ Create a new .scss file(in my case custom-theme.scss) and add it to angular.json
 ```
 
 Continue with the snippet from the top.
-
-> Experiment on block quote
