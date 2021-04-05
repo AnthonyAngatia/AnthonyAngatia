@@ -1,28 +1,123 @@
 [
   {
-  "snippetId":2,
+  "snippetId":1,
   "title":"Creating a dark theme with Angular Material",
   "subTitle":"How to use theme your angular application using Angular Material",
   "route":"create-dark-theme-with-angular-and-angular-material",
-  "date" : "Feb 17,2020",
+  "date" : "Dec 30,2020",
   "tags":[
     "angular","angular-material"
   ],
-  "snippet":"TEST.md",
+  "snippet":"snippets/angular-dark-mode.md",
   "author":"Anthony Angatia",
   "readTime":"3 min"
   },
   {
-    "snippetId":3,
-    "title":"Creating a dark theme with Angular Material",
-    "subTitle":"How to use theme your angular application using Angular Material",
-    "route":"create-dark-theme-with-angular-and-angular-material",
-    "date" : "Feb 17,2020",
+    "snippetId":2,
+    "title":"Using ALIAS in sql",
+    "subTitle":"How to use ALIAS in sql",
+    "route":"using-alias-sql",
+    "date" : "Mar 23,2021",
     "tags":[
-      "java"
+      "sql"
     ],
-    "snippet":"TEST.md",
+    "snippet":"snippets/using-alias-sql.md",
     "author":"Anthony Angatia",
     "readTime":"3 min"
-    }
+  },
+  {
+    "snippetId":3,
+    "title":"About LinkedList",
+    "subTitle":"LinkedList in java",
+    "route":"linkedlist-java",
+    "date" : "Mar 27,2021",
+    "tags":[
+      "java","data-structures"
+    ],
+    "snippet":"snippets/linkedlist-java.md",
+    "author":"Anthony Angatia",
+    "readTime":"3 min"
+  },
+  {
+      "snippetId":4,
+      "title":"Using DISTINCT SQL",
+      "subTitle":"Selecting DISTINCT values from a table",
+      "route":"distinct-sql",
+      "date" : "Mar 23,2021",
+      "tags":[
+        "sql"
+      ],
+      "snippet":"snippets/distinct-sql.md",
+      "author":"Anthony Angatia",
+      "readTime":"1 min"
+  },
+  {
+    "snippetId":5,
+    "title":"Using BETWEEN and IN SQL",
+    "subTitle":"Using BETWEEN and IN instead of AND and OR",
+    "route":"between-and-in-sql",
+    "date" : "Mar 24,2021",
+    "tags":[
+      "sql"
+    ],
+    "snippet":"snippets/between-and-in-sql.md",
+    "author":"Anthony Angatia",
+    "readTime":"7 min"
+  },
+  {
+    "snippetId":7,
+    "title":"Operator precedence in SQL",
+    "subTitle":"Operator precedence in SQL",
+    "route":"operator-precedence-sql",
+    "date" : "Mar 18,2021",
+    "tags":[
+      "sql"
+    ],
+    "snippet":"snippets/operator-precedence.md",
+    "author":"Anthony Angatia",
+    "readTime":"5 min"
+  },
+  {
+    "snippetId":8,
+    "title":"SQL inner Join",
+    "subTitle":"How to use inner join in sql",
+    "route":"inner-join-sql",
+    "date" : "Mar 23,2021",
+    "tags":[
+      "sql"
+    ],
+    "snippet":"snippets/inner-join.md",
+    "author":"Anthony Angatia",
+    "readTime":"5 min"
+  },
+  {
+    "snippetId":9,
+    "title":"SQL Outer Join",
+    "subTitle":"How to use outer join in sql",
+    "route":"outer-join-sql",
+    "date" : "Mar 23,2021",
+    "tags":[
+      "sql"
+    ],
+    "snippet":"snippets/outer-join.md",
+    "author":"Anthony Angatia",
+    "readTime":"6 min"
+  },
+  {
+    "snippetId":10,
+    "title":"SQL Full Join",
+    "subTitle":"How to use full join in sql",
+    "route":"full-join-sql",
+    "date" : "Mar 23,2021",
+    "tags":[
+      "sql"
+    ],
+    "snippet":"snippets/full-join.md",
+    "author":"Anthony Angatia",
+    "readTime":"5 min"
+  }
+
+
+
+
 ]

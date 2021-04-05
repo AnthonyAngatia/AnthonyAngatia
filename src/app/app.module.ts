@@ -29,15 +29,11 @@ import "node_modules/prismjs/components/prism-sql.min.js";
 import "node_modules/prismjs/components/prism-javascript.min.js";
 import "node_modules/prismjs/components/prism-json.min.js";
 import "node_modules/prismjs/components/prism-json5.min.js";
+import "node_modules/prismjs/components/prism-java.min.js";
 
 import { SnippetDisplayComponent } from './snippet-display/snippet-display.component'
 import { FormsModule } from '@angular/forms';
 import { TagsComponent } from './tags/tags.component';
-
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -66,9 +62,6 @@ import { TagsComponent } from './tags/tags.component';
     MarkdownModule.forRoot(
       {loader: HttpClient}
     ),
-
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

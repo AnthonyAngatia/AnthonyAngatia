@@ -63,8 +63,6 @@ $custom-typography: mat-typography-config(
   @include angular-material-color($light-theme);
 }
 
-@import "~highlight.js/styles/vs2015.css";
-
 .file-name {
   width: fit-content;
   margin-bottom: -57px;
