@@ -1,29 +1,14 @@
 ## Creating dark theme using Angular Material
 
-The following code snippet is a step by step walkthrough on how to create dark theme using Angular material. This walkthrough has an example for situations where you are using css or scss as your styling method
+Add angular material and select scss as your preferred styling method. Scss is like a superset of css therefore for those used to css don't shy away. P.S: Stick with css if you have it configured as your default style(Scroll to the last section of this page for more).
 
-Add angular material and select scss as your preferred styling method.
-
-```terminal
+```bash
 ng add @angular/material
 ```
 
-Choose a theme. You can select one of the pre-defined theme provided or custom theme
-
-Select the styling type. If you choose css, you will have to create a new .scss file(in my case custom-theme.scss) and add it to angular.json file as shown below.
-
-```json
- "styles": [
-    "src/custom-theme.scss",
-    "src/styles.css"
-  ],
-```
-
-Paste the below boilerplate code in your custom-theme.scss
-
-Incase you chose .scss as your default style, copy the below boilerplate code in your styles.scss file
-
-If you selected custom-theme when choosing a theme, a new file named custom-theme.scss will be formed as below
+Choose a theme. You can select one of the pre-defined theme provided or custom theme.
+If you selected custom-theme when choosing a theme, a new file named custom-theme.scss will be formed as below.
+If you selected a predefined theme, make sure you have this in your styles.scss file.
 
 ```scss
 // Custom Theming for Angular Material
@@ -65,11 +50,9 @@ $light-theme: mat-light-theme(
 @include angular-material-theme($theme-test-theme);
 ```
 
-A custom theme file defines a theme data structure as the composition of configurations for the individual theming systems that is, color and typography. This object can be created by either the mat-light-theme function or the mat-dark-theme function. The output of this function is then passed to the angular-material-theme mixin, which will output all of the corresponding styles for the theme. Defining custom theme
+To create multiple themes e.g Dark theme, define alternate theme objects. From the above code we have one the object `$light-theme`. Define another theme object `$dark-theme`(use your preferred object name).
 
 Define the mat-dark-theme() as shown below.
-
-custom-theme.scss
 
 ```scss
 $dark-theme: mat-dark-theme(
@@ -83,13 +66,19 @@ $dark-theme: mat-dark-theme(
 );
 ```
 
-Define 2 css classes one for light theme and the other for dark theme
+To include either of the theme in your application.
 
-Since we are only going to change the color and not the entire theme, we will pass the theme mixins to the function angular-material-color() function. If you pass it to the function angular-material-theme(), you get a duplication warning on your terminal. For more information on this check out:Duplicating themes
+```scss
+@include angular-material-theme($dark-theme); //or $light-theme
+```
 
-Remember to change the light theme varibale to $light-theme
+However, if you are only changing the color and not the entire theme use the function:
 
-custom-theme.scss
+```scss
+@include angular-material-color($dark-theme);
+```
+
+To toggle between the 2 themes, define 2 classes as below
 
 ```scss
 .theme-dark {
@@ -100,24 +89,8 @@ custom-theme.scss
 }
 ```
 
-We are going to toggle this classes when an event occurs. In this example we will add a slide toggle to toggle between the light-theme and dark-theme
-
-Below is my app.component.html file
-
-app.component.html
-
-```html
-<mat-slide-toggle (change)="onSwitch($event)" style="float:right"
-  >Dark Mode</mat-slide-toggle
->
-<p>
-  <mat-toolbar>
-    <span>My Application</span>
-  </mat-toolbar>
-</p>
-```
-
-app.component.ts
+Toggle the classes in the `<body></body>` tag of your DOM.
+There are multiple ways of going about this. You can inject Renderer2 in your component and use it to change the class of the `<body>` element.
 
 ```typescript
 import { DOCUMENT } from "@angular/common";
@@ -141,18 +114,36 @@ export class AppComponent {
   }
 
   onSwitch(event) {
-    console.log(event);
     if (event.checked) {
       this.isDark = true;
     } else {
       this.isDark = false;
     }
-    //Since typography is configured globally, remember to add the class mat-typography
+    //Since typography is configured globally, remember to add the class mat-typography(if you have your typography configured)
     const hostClass = this.isDark
       ? "theme-dark mat-typography"
       : "theme-light mat-typography";
-    localStorage.setItem("hostClass", hostClass);
+    localStorage.setItem("hostClass", hostClass); //use localstorage to recall the users choice
     this.renderer.setAttribute(this.document.body, "class", hostClass);
   }
 }
 ```
+
+```html
+<mat-slide-toggle (change)="onSwitch($event)" style="float:right">
+  Dark Mode</mat-slide-toggle
+>
+```
+
+# CSS
+
+Create a new .scss file(in my case custom-theme.scss) and add it to angular.json file as shown below.
+
+```json
+ "styles": [
+    "src/custom-theme.scss",
+    "src/styles.css"
+  ],
+```
+
+Continue with the snippet from the top.

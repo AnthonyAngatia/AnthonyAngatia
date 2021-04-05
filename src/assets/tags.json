@@ -11,5 +11,17 @@
   {
     "classexpression":"tag-java",
     "name":"java"
+  },
+  {
+    "classexpression":"tag-data-structures",
+    "name":"data-structures"
+  },
+  {
+    "classexpression":"tag-sql",
+    "name":"sql"
+  },
+  {
+    "classexpression":"tag-angular-material",
+    "name":"angular-material"
   }
 ]

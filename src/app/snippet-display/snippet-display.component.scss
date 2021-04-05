@@ -1,0 +1,18 @@
+markdown ::ng-deep blockquote {
+  background-color: #4f4caf25;
+  border-left: 4px solid #4f4cafb0;
+  padding: 4px;
+}
+markdown ::ng-deep p {
+  code {
+    color: #a5251e;
+    border-radius: 4px;
+    background-color: #4f4caf36;
+    padding: 0px 4px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  markdown ::ng-deep blockquote {
+    margin: 4px 10px;
+  }
+}
