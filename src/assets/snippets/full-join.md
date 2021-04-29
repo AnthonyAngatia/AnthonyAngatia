@@ -35,13 +35,14 @@ ON p.person_id = o.person_id;
 ```
 
 The result will be:
+
 | person_id | person_name | order_id | restaurant |
-|-----------|-------------|----------|------------|
-| 00 | Toni | 1 | RestA |
-| 01 | Eve | 2 | RestE |
-| 02 | Liz | 3 | RestI |
-| 03 | Dolores | 4 | RestO |
-| 03 | Dolores | 5 | RestU |
-| 03 | Dolores | 6 | RestAA |
-| 04 | Ben | 7 | null |
-| null | null | 7 | RestAA |
+| --------- | ----------- | -------- | ---------- |
+| 00        | Toni        | 1        | RestA      |
+| 01        | Eve         | 2        | RestE      |
+| 02        | Liz         | 3        | RestI      |
+| 03        | Dolores     | 4        | RestO      |
+| 03        | Dolores     | 5        | RestU      |
+| 03        | Dolores     | 6        | RestAA     |
+| 04        | Ben         | 7        | null       |
+| null      | null        | 7        | RestAA     |

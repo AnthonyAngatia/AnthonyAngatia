@@ -1,6 +1,6 @@
-## Creating dark theme using Angular Material
+# Creating dark theme using Angular Material
 
-Add angular material and select scss as your preferred styling method. Scss is like a superset of css therefore for those used to css don't shy away. P.S: Stick with css if you have it configured as your default style(Scroll to the last section of this page for more).
+Add angular material and select scss as your preferred styling method. Scss is like a superset of css therefore if you are used to css don't shy away. P.S: Stick with css if you have it configured as your default style(Scroll to the last section of this page for more).
 
 ```bash
 ng add @angular/material
@@ -50,7 +50,7 @@ $light-theme: mat-light-theme(
 @include angular-material-theme($theme-test-theme);
 ```
 
-To create multiple themes e.g Dark theme, define alternate theme objects. From the above code we have one the object `$light-theme`. Define another theme object `$dark-theme`(use your preferred object name).
+To create multiple themes e.g Dark theme, define alternate theme objects. From the above code we have one the object `$light-theme`. Define another theme object `$dark-theme`.(use your preferred object name).
 
 Define the mat-dark-theme() as shown below.
 
@@ -78,7 +78,7 @@ However, if you are only changing the color and not the entire theme use the fun
 @include angular-material-color($dark-theme);
 ```
 
-To toggle between the 2 themes, define 2 classes as below
+To toggle between the 2 themes, define 2 css classes as below
 
 ```scss
 .theme-dark {
@@ -135,7 +135,7 @@ export class AppComponent {
 >
 ```
 
-# CSS
+## If you had pre-configures CSS as your styling method
 
 Create a new .scss file(in my case custom-theme.scss) and add it to angular.json file as shown below.
 

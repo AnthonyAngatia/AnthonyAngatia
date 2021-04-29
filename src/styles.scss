@@ -40,8 +40,11 @@ $dark-theme: mat-dark-theme(
 );
 $custom-typography: mat-typography-config(
   $font-family: "Kreon, serif",
-  $title: mat-typography-level(28px, 48px, 400),
-  $body-1: mat-typography-level(20px, 48px, 400),
+  $headline: mat-typography-level(28px, 48px, 400),
+  $title: mat-typography-level(20px, 48px, 400),
+  $subheading-2: mat-typography-level(20px, 48px, 400),
+  $subheading-1: mat-typography-level(20px, 48px, 400),
+  $body-1: mat-typography-level(20px, 40px, 400),
 );
 //font-size, line-height, and font-weight Reference: https://github.com/angular/components/blob/master/guides/typography.md
 @include angular-material-typography($custom-typography);
@@ -85,9 +88,11 @@ a {
   background-color: #4caf50;
 }
 .tag {
+  margin: 2px 1em 2px 0em;
+}
+.tag-inner {
   border-radius: 2px;
   padding: 4px 12px;
-  margin: 2px 1em 2px 0em;
   background-color: #303030;
 }
 .tag-angular {
@@ -126,7 +131,7 @@ $custom-typography2: mat-typography-config(
   $display-2: mat-typography-level(28px, 48px, 400),
   $display-1: mat-typography-level(24px, 48px, 400),
   $title: mat-typography-level(24px, 48px, 400),
-  $body-1: mat-typography-level(18px, 48px, 400),
+  $body-1: mat-typography-level(18px, 40px, 400),
 );
 @media only screen and (max-width: 600px) {
   @include angular-material-typography($custom-typography2);
