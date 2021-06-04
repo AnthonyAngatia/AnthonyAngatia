@@ -3,7 +3,7 @@
 Joins are used to query 2 or multiple tables at a go. Inner join returns rows from 2 or more tables that fulfill a certain condition. The fields used in joining must exist in both tables.
 Example: Let's say we want to get persons details who have made an order in our restaurants across the city. We have the person table and the order table as shown below.
 
-#### Persons
+#### Persons table
 
 | person_id | person_name | person_age |
 | --------- | ----------- | ---------- |
@@ -13,7 +13,7 @@ Example: Let's say we want to get persons details who have made an order in our 
 | 03        | Dolores     | 26         |
 | 04        | Ben         | 17         |
 
-#### Orders
+#### Orders table
 
 | order_id | restaurant | person_id |
 | -------- | ---------- | --------- |
@@ -42,7 +42,7 @@ Our result will be:
 | 03        | Dolores     | 4        | RestO      |
 | 03        | Dolores     | 5        | RestU      |
 
-> Note that Dolores appears twice because she made 2 orders. Meanwhile, Ben does not appear because he has never placed an order.
+> Note that Dolores appears twice because she made 2 orders. Meanwhile, Ben does not appear because he has not placed an order.
 
 #### Using a WHERE clause with JOIN
 

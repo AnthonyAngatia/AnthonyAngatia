@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
 import { HomeComponent } from './home/home.component';
-import { SnippetDisplayComponent } from './snippet-display/snippet-display.component';
-import { TagsComponent } from './tags/tags.component';
+import { SnippetDisplayComponent } from './code-snippet/snippet-display/snippet-display.component';
+import { TagsComponent } from './code-snippet/tags/tags.component';
 
 const routes: Routes = [
   {
@@ -27,7 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

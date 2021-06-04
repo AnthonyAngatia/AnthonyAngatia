@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ISnippet } from '../code-snippet/snippet';
-import { SnippetService } from '../code-snippet/snippet.service';
+import { ISnippet } from '../snippet';
+import { SnippetService } from '../snippet.service';
 
 @Component({
   selector: 'app-snippet-display',

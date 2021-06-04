@@ -1,4 +1,4 @@
-# LinkedList
+## LinkedList
 
 ### Declaring and Adding/Inserting into a linked list
 

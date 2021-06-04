@@ -1,16 +1,21 @@
-# Using ALIAS in sql
+# Using 'ALIAS' keyword in sql
 
 You can give a column or a table an alias name in sql. One of the reason for this is to enhance readability.
 Using an Alias column name
 
 ```sql
-SELECT cust_name AS Customer, cust_tel_no AS [Customer Telephone] FROM person;
+SELECT cust_name AS Customer,
+cust_tel_no AS [Customer Telephone]
+FROM person;
 ```
 
 > We use a square bracket incase we need to space the alias name
 
-Using an Alias table name
-This comes in handy when you are retrieving data from multiple tables and you want to shorten the table name. This easens your work and it is less error prone.
+## Using an AlIAS table name
+
+This comes in handy when you are querying data from multiple tables and you want to shorten the table name. This easens your work and it is less error prone.
+
+In this query, we are retrieving Order details of a customer named Tony from the order table and the customer name from the customer table.
 
 ```sql
 SELECT o.OrderID, o.OrderDate, c.CustomerName;

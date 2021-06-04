@@ -11,6 +11,27 @@ markdown ::ng-deep p {
     padding: 0px 4px;
   }
 }
+markdown ::ng-deep table {
+  border: 1px solid;
+  thead {
+    tr {
+      th {
+        letter-spacing: 2px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        text-align: center;
+        border: 1px solid;
+      }
+    }
+  }
+  background-color: #4f4caf25;
+  border-top: 4px solid #4f4cafb0;
+  padding: 4px;
+}
 @media only screen and (max-width: 600px) {
   markdown ::ng-deep blockquote {
     margin: 4px 10px;
