@@ -2,7 +2,7 @@
 
 ### Hi there 👋, Anthony here
 #### I am software engineer
-![I am software engineer](https://im4.ezgif.com/tmp/ezgif-4-5b3717e724.gif)
+![I am software engineer](github-assets/Programmer.gif)
 
 Anthony Angatia is:
  - A passionate IT enthusiast

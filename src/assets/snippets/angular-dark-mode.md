@@ -1,3 +1,5 @@
+  [_metadata_:author]:- "Anthony Angatia"
+  [_metadata_:tags]:- "markdown metadata"
 # Creating dark theme using Angular Material
 
 Add angular material and select scss as your preferred styling method. Scss is like a superset of css therefore if you are used to css don't shy away. P.S: Stick with css if you have it configured as your default style(Scroll to the last section of this page for more).
