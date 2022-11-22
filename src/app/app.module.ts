@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AngularFireModule } from "@angular/fire";
+import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,13 +14,13 @@ import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 
 
-import "node_modules/prismjs/components/prism-typescript.min.js"
-import "node_modules/prismjs/components/prism-sql.min.js";
-import "node_modules/prismjs/components/prism-javascript.min.js";
-import "node_modules/prismjs/components/prism-json.min.js";
-import "node_modules/prismjs/components/prism-json5.min.js";
-import "node_modules/prismjs/components/prism-java.min.js";
-import "node_modules/prismjs/components/prism-bash.min.js";
+import 'node_modules/prismjs/components/prism-typescript.min.js';
+import 'node_modules/prismjs/components/prism-sql.min.js';
+import 'node_modules/prismjs/components/prism-javascript.min.js';
+import 'node_modules/prismjs/components/prism-json.min.js';
+import 'node_modules/prismjs/components/prism-json5.min.js';
+import 'node_modules/prismjs/components/prism-java.min.js';
+import 'node_modules/prismjs/components/prism-bash.min.js';
 
 import { CodeSnippetModule } from './code-snippet/code-snippet.module';
 import { SharedModule } from './shared/shared/shared.module';
