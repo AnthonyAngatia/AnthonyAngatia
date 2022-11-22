@@ -20,7 +20,7 @@ const routes: Routes = [
     component: SnippetDisplayComponent, // child route component that the router renders
   },
   {
-    path:'about', component: AboutComponent
+    path: 'about', component: AboutComponent
   },
   {path: '', component: HomeComponent, pathMatch: 'full'},
 

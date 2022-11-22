@@ -8,46 +8,46 @@ import { SnippetService } from './snippet.service';
   styleUrls: ['./code-snippet.component.scss']
 })
 export class CodeSnippetComponent implements OnInit {
-  snippets:ISnippet[];//Array of a snippet interface
-  tagClassExpression:string[] = [];
-  tagsArray:Object[] = [];
+  snippets: ISnippet[]; // Array of a snippet interface
+  tagClassExpression: string[] = [];
+  tagsArray: object[] = [];
 
 
-  constructor(private snippetService:SnippetService) { }
+  constructor(private snippetService: SnippetService) { }
 
   ngOnInit(): void {
     this.getAllSnippets();
     this.getTags();
   }
 
-  private getAllSnippets() {
+  private getAllSnippets(): void {
     this.snippetService.getSnippets().subscribe({
       next: snippets => {
         snippets = this.restructureTagArray(snippets);
         this.snippets = Object.values(snippets);
       },
-      error: err => console.error("An error occurred retrieving the snippets" + err)
+      error: err => console.error('An error occurred retrieving the snippets' + err)
     });
   }
 
-  private getTags(){
+  private getTags(): void{
     this.snippetService.getTags().subscribe({
-      next:tags => this.tagsArray = tags,
-      error:err => console.log(err+":Error over here")
-    })
+      next: tags => this.tagsArray = tags,
+      error: err => console.log(err + ':Error over here')
+    });
   }
 
 
   private restructureTagArray(snippets: ISnippet[]): ISnippet[] {
-    for( let item of Object.values(snippets)){
+    for ( const item of Object.values(snippets)){
       let tags = [];
       item.tags.forEach(tagElement => {
-        let classExpression: string = 'tag-' + tagElement;
+        const classExpression: string = 'tag-' + tagElement;
         this.tagClassExpression.push(classExpression);
-        //Declare new tag structure
-        let tag = {
-          name: "",
-          classexpression: ""
+        // Declare new tag structure
+        const tag = {
+          name: '',
+          classexpression: ''
         };
         tag.name = tagElement;
         tag.classexpression = 'tag-' + tagElement;
@@ -56,6 +56,6 @@ export class CodeSnippetComponent implements OnInit {
       item.tags = tags;
       tags = [];
     }
-  return snippets;
+    return snippets;
   }
 }
