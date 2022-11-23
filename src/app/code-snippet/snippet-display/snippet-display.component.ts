@@ -1,10 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ISnippet } from '../snippet';
-import { SnippetService } from '../snippet.service';
-import {Observable, Subscription} from 'rxjs';
-import {CommentService} from '../comment.service';
-import {IComment} from '../comment';
+import {ActivatedRoute} from '@angular/router';
+import {ISnippet} from '../snippet';
+import {SnippetService} from '../snippet.service';
+import { Subscription} from 'rxjs';
+
 
 @Component({
   selector: 'app-snippet-display',
@@ -13,12 +12,11 @@ import {IComment} from '../comment';
 })
 export class SnippetDisplayComponent implements OnInit, OnDestroy {
   private titleId = this.route.snapshot.paramMap.get('snippetTitle');
-  private snippetId: number;
+  snippetId: number;
   snippet: ISnippet;
-  comments: IComment[];
 
-  constructor(private route: ActivatedRoute, private snippetService: SnippetService,
-              private commentService: CommentService) { }
+  constructor(private route: ActivatedRoute, private snippetService: SnippetService) {
+  }
 
 
   ngOnInit(): void {
@@ -27,9 +25,8 @@ export class SnippetDisplayComponent implements OnInit, OnDestroy {
     console.log(this.snippetId);
   }
 
-  ngOnDestroy(): void{
+  ngOnDestroy(): void {
     this.getSnippet(this.titleId).unsubscribe();
-    this.getCommentsInPost(this.snippetId).unsubscribe();
   }
 
   // Ideally this method should be in a service and returns an observable
@@ -38,16 +35,8 @@ export class SnippetDisplayComponent implements OnInit, OnDestroy {
       next: snippet => {
         this.snippet = snippet;
         this.snippetId = snippet.snippetId;
-        this.getCommentsInPost(this.snippetId);
       },
       error: err => console.log('Error getting Snippets' + err)
-    });
-  }
-
-  getCommentsInPost(snippetId: number): Subscription {
-    return this.commentService.getCommentsInPost(this.snippetId).subscribe({
-      next: comments => this.comments = Object.values(comments),
-      error: err => console.log('Error retrieving comments')
     });
   }
 

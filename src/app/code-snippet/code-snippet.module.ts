@@ -8,6 +8,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { HttpClient } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
 import { SharedModule } from '../shared/shared/shared.module';
+import { CommentComponent } from './snippet-display/comment/comment.component';
 
 
 
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared/shared.module';
   declarations: [
     CodeSnippetComponent,
     SnippetDisplayComponent,
-    TagsComponent
+    TagsComponent,
+    CommentComponent
   ],
   imports: [
     CommonModule,
