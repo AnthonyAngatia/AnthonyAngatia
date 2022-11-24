@@ -5,6 +5,7 @@ import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
 import { HomeComponent } from './home/home.component';
 import { SnippetDisplayComponent } from './code-snippet/snippet-display/snippet-display.component';
 import { TagsComponent } from './code-snippet/tags/tags.component';
+import {CommentAddComponent} from './code-snippet/snippet-display/comment/comment-add.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'snippets/:snippetTitle', // child route path dark-theme-angular-material
     component: SnippetDisplayComponent, // child route component that the router renders
+    children: [
+      {path: 'add',
+      component: CommentAddComponent}
+    ]
   },
   {
     path: 'about', component: AboutComponent

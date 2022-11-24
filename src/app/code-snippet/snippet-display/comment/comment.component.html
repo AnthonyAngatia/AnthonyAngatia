@@ -10,18 +10,22 @@
     }
   </style>
   <h1>Comments</h1>
-  <mat-card *ngFor="let comment of comments" style="margin-bottom: 16px">
-    <div style="display: flex; align-items: center">
-      <h2 style=" padding: 16px; line-height: normal; margin: 0 16px 0 0; background-color: #4caf5069;">
-        UI:{{comment.id}}</h2>
-      <div>
-        <h2 class="commenter-name">User Name: {{comment.name}}</h2>
-        <h6 class="commenter-email">{{comment.email}}</h6>
+  <button mat-stroked-button color="primary" (click)="addComment()">ADD COMMENT</button>
+  <div *ngFor="let comment of comments">
+    <mat-card  style="margin: 16px 0 16px 0">
+      <div style="display: flex; align-items: center">
+        <h2 style=" padding: 16px; line-height: normal; margin: 0 16px 0 0; background-color: #4caf5069;">
+          UI:{{comment.id}}</h2>
+        <div>
+          <h2 class="commenter-name">User Name: {{comment.name}}</h2>
+          <h6 class="commenter-email">{{comment.email}}</h6>
+        </div>
       </div>
-    </div>
 
 
-    <p>{{comment.body}}</p>
-    <button mat-stroked-button color="primary">REPLY</button>
-  </mat-card>
+      <p>{{comment.body}}</p>
+      <button mat-stroked-button color="primary" [routerLink]="['add']">REPLY</button>
+    </mat-card>
+
+  </div>
 </div>

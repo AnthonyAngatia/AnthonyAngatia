@@ -1,0 +1,35 @@
+<style>
+  .example-full-width{
+    width: 100%;
+  }
+   .commenter-name {
+     margin-bottom: 0px;
+     line-height: normal;
+   }
+
+  .commenter-email {
+    line-height: normal;
+  }
+</style>
+<!--<mat-dialog-content>-->
+<!--  <mat-card style="margin: 16px 0">-->
+    <div style="display: flex; align-items: center">
+      <h2 style=" padding: 16px; line-height: normal; margin: 0 16px 0 0; background-color: #4caf5069;">
+        UI:{{0}}</h2>
+      <div>
+        <h2 class="commenter-name">User Name: </h2>
+        <h6 class="commenter-email">useremail@gmail.com</h6>
+      </div>
+    </div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+    <div mat-dialog-actions align="end">
+      <button mat-stroked-button color="primary" [mat-dialog-close] = "true">POST</button>
+      <button mat-stroked-button color="warn" [mat-dialog-close] = "true">CANCEL</button>
+    </div>
+
+<!--  </mat-card>-->
+<!--</mat-dialog-content>-->
+
