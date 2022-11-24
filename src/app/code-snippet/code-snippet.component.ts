@@ -41,18 +41,21 @@ export class CodeSnippetComponent implements OnInit {
   private restructureTagArray(snippets: ISnippet[]): ISnippet[] {
     for ( const item of Object.values(snippets)){
       let tags = [];
-      item.tags.forEach(tagElement => {
-        const classExpression: string = 'tag-' + tagElement;
-        this.tagClassExpression.push(classExpression);
-        // Declare new tag structure
-        const tag = {
-          name: '',
-          classexpression: ''
-        };
-        tag.name = tagElement;
-        tag.classexpression = 'tag-' + tagElement;
-        tags.push(tag);
-      });
+      if (item.tags !== null){
+        item.tags.forEach(tagElement => {
+          const classExpression: string = 'tag-' + tagElement;
+          this.tagClassExpression.push(classExpression);
+          // Declare new tag structure
+          const tag = {
+            name: '',
+            classexpression: ''
+          };
+          tag.name = tagElement;
+          tag.classexpression = 'tag-' + tagElement;
+          tags.push(tag);
+        });
+      }
+
       item.tags = tags;
       tags = [];
     }

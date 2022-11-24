@@ -1,6 +1,14 @@
 <div style="padding: 16px; margin:1em;">
-  <markdown [src]="'assets/'+snippet.snippet">
-  </markdown>
+<!--  <markdown [src]="'assets/'+snippet.snippet">-->
+<!--  </markdown>-->
+  <h1>Article</h1>
+  <div>
+    <p>{{snippet.snippet}}</p>
+  </div>
+  <div style="">
+    <button mat-stroked-button color="accent" style="margin-right: 10px">UPDATE</button>
+    <button mat-stroked-button color="warn">DELETE</button>
+  </div>
 <app-comment
   [snippetId] = "snippetId"></app-comment>
 

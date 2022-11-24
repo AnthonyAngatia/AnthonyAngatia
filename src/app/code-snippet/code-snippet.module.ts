@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
 import { SharedModule } from '../shared/shared/shared.module';
 import { CommentComponent } from './snippet-display/comment/comment.component';
-import {MatInputModule} from "@angular/material/input";
+import {MatInputModule} from '@angular/material/input';
 import { CommentAddComponent } from './snippet-display/comment/comment-add.component';
 
 

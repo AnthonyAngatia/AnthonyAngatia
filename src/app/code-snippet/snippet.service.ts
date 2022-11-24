@@ -1,9 +1,8 @@
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {from, Observable, of, throwError} from 'rxjs';
-import {catchError, find, map, tap} from 'rxjs/operators';
-import {ISnippet} from './snippet';
-import {IComment} from "./comment";
+import {Observable, throwError} from 'rxjs';
+import {catchError, map, tap} from 'rxjs/operators';
+import {Article, ISnippet} from './snippet';
 
 @Injectable({
   providedIn: 'root'
@@ -11,18 +10,38 @@ import {IComment} from "./comment";
 export class SnippetService {
   private snippetUrl = 'assets/articles.json';
   private tagsUrl = 'assets/tags.json';
+  private articlesUrl = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http: HttpClient) {
 
   }
 
+  transformToSnippet(article: Article): ISnippet{
+    return {
+      snippetId: article.id,
+      title: article.title,
+      subTitle: article.body,
+      route: article.id.toString(),
+      date: null,
+      tags: null,
+      snippet: article.body,
+      author: null,
+      readTime: null
+    };
+
+}
+
   getSnippets(): Observable<ISnippet[]> {
-    return this.http.get<ISnippet[]>(this.snippetUrl).pipe(
-      tap(data => {
-        // Returns an observable that is identical to the source. It does not modify the stream in any way.
-        // Useful for logging, debugging etc
-      }),
-      catchError(this.handleError)
+    return this.http.get<Article[]>(this.articlesUrl).pipe(
+      map(articles => {
+        const snippetsArr: ISnippet[] = [];
+        for (const article of articles){
+          const x = this.transformToSnippet(article);
+          snippetsArr.push(x);
+        }
+        console.log(snippetsArr);
+        return snippetsArr;
+      })
     );
   }
 

@@ -14,19 +14,20 @@ export class SnippetDisplayComponent implements OnInit, OnDestroy {
   private titleId = this.route.snapshot.paramMap.get('snippetTitle');
   snippetId: number;
   snippet: ISnippet;
+  snippetSubscription: Subscription;
 
   constructor(private route: ActivatedRoute, private snippetService: SnippetService) {
   }
 
 
   ngOnInit(): void {
-    this.getSnippet(this.titleId);
+    this.snippetSubscription = this.getSnippet(this.titleId);
     // this.snippetId = this.snippet.snippetId;
     console.log(this.snippetId);
   }
 
   ngOnDestroy(): void {
-    this.getSnippet(this.titleId).unsubscribe();
+    this.snippetSubscription.unsubscribe();
   }
 
   // Ideally this method should be in a service and returns an observable
