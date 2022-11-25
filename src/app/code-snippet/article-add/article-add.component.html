@@ -1,0 +1,41 @@
+<style>
+  .example-full-width {
+    width: 100%;
+  }
+
+  .commenter-name {
+    margin-bottom: 0px;
+    line-height: normal;
+  }
+
+  .commenter-email {
+    line-height: normal;
+  }
+</style>
+<!--<mat-dialog-content>-->
+<!--  <mat-card style="margin: 16px 0">-->
+<div style="margin: 3em; border: 2px solid #4caf50; border-radius: 4px; padding: 1em;">
+  <form (ngSubmit)="save()"
+        [formGroup]=articleForm>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Article title" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Right your article</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..." formControlName="body"></textarea>
+    </mat-form-field>
+    <div mat-dialog-actions align="end">
+      <button type="submit" mat-stroked-button color="primary" [disabled]="!articleForm.valid">POST</button>
+      <button mat-stroked-button color="warn" type="reset">CANCEL</button>
+    </div>
+  </form>
+
+</div>
+
+
+<!--  </mat-card>-->
+<!--</mat-dialog-content>-->
+

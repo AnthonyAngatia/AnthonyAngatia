@@ -11,6 +11,8 @@ import { SharedModule } from '../shared/shared/shared.module';
 import { CommentComponent } from './snippet-display/comment/comment.component';
 import {MatInputModule} from '@angular/material/input';
 import { CommentAddComponent } from './snippet-display/comment/comment-add.component';
+import { ArticleAddComponent } from './article-add/article-add.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -20,7 +22,8 @@ import { CommentAddComponent } from './snippet-display/comment/comment-add.compo
     SnippetDisplayComponent,
     TagsComponent,
     CommentComponent,
-    CommentAddComponent
+    CommentAddComponent,
+    ArticleAddComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +32,8 @@ import { CommentAddComponent } from './snippet-display/comment/comment-add.compo
     MarkdownModule.forRoot(
       {loader: HttpClient}
     ),
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
 
   ]
 })

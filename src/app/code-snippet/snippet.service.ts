@@ -1,4 +1,4 @@
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
@@ -31,6 +31,27 @@ export class SnippetService {
 
 }
 
+  addArticle(title: string, body: string): void{
+    console.log('Addign article');
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const post: Article = {
+      title,
+      body,
+      userId: 1,
+    };
+    console.log(post, ">>");
+    console.log(this.http.post);
+    this.http.post(this.articlesUrl, post, {headers} ).pipe(
+      tap(response => {
+        console.log(response);
+        console.log('response');
+      }),
+      catchError(err => {
+        console.log('Post request failed' + err);
+        return throwError(err);
+      })
+    );
+  }
   getSnippets(): Observable<ISnippet[]> {
     return this.http.get<Article[]>(this.articlesUrl).pipe(
       map(articles => {

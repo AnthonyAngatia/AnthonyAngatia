@@ -3,7 +3,7 @@
 <!--  </markdown>-->
   <h1>Article</h1>
   <div>
-    <p>{{snippet.snippet}}</p>
+    <p *ngIf="snippet.snippet">{{snippet.snippet}}</p>
   </div>
   <div style="">
     <button mat-stroked-button color="accent" style="margin-right: 10px">UPDATE</button>
