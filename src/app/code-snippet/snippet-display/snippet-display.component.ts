@@ -3,6 +3,9 @@ import {ActivatedRoute} from '@angular/router';
 import {ISnippet} from '../snippet';
 import {SnippetService} from '../snippet.service';
 import { Subscription} from 'rxjs';
+import {CommentAddComponent} from "./comment/comment-add.component";
+import {MatDialog} from "@angular/material/dialog";
+import {ArticleAddComponent} from "../article-add/article-add.component";
 
 
 @Component({
@@ -40,5 +43,7 @@ export class SnippetDisplayComponent implements OnInit, OnDestroy {
       error: err => console.log('Error getting Snippets' + err)
     });
   }
+
+
 
 }

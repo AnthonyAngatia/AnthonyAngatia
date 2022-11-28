@@ -4,7 +4,7 @@ import {CommentService} from '../../comment.service';
 import {IComment} from '../../comment';
 import {MatDialog} from '@angular/material/dialog';
 import {CommentAddComponent} from './comment-add.component';
-import {ScrollStrategyOptions} from "@angular/cdk/overlay";
+import {ScrollStrategyOptions} from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-comment',
@@ -53,7 +53,7 @@ export class CommentComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe(result => {
       console.log('Aftwer closed subscrition');
       console.log(result);
-      //Initiate a post request when the dialog has been closed
+      // Initiate a post request when the dialog has been closed
     });
 
   }

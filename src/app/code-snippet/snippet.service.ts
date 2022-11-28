@@ -31,20 +31,19 @@ export class SnippetService {
 
 }
 
-  addArticle(title: string, body: string): void{
-    console.log('Addign article');
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+
+  addArticle(title: string, body: string): Observable<any>{
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=UTF-8' });
     const post: Article = {
       title,
       body,
       userId: 1,
     };
-    console.log(post, ">>");
-    console.log(this.http.post);
-    this.http.post(this.articlesUrl, post, {headers} ).pipe(
+    console.log(post);
+
+    return this.http.post(this.articlesUrl, post, {headers} ).pipe(
       tap(response => {
-        console.log(response);
-        console.log('response');
       }),
       catchError(err => {
         console.log('Post request failed' + err);
@@ -60,7 +59,6 @@ export class SnippetService {
           const x = this.transformToSnippet(article);
           snippetsArr.push(x);
         }
-        console.log(snippetsArr);
         return snippetsArr;
       })
     );

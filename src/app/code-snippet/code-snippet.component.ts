@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ISnippet } from './snippet';
 import { SnippetService } from './snippet.service';
+import {ArticleAddComponent} from './article-add/article-add.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-code-snippet',
@@ -13,7 +15,7 @@ export class CodeSnippetComponent implements OnInit {
   tagsArray: object[] = [];
 
 
-  constructor(private snippetService: SnippetService) { }
+  constructor(private snippetService: SnippetService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getAllSnippets();
@@ -35,6 +37,20 @@ export class CodeSnippetComponent implements OnInit {
       next: tags => this.tagsArray = tags,
       error: err => console.log(err + ':Error over here')
     });
+  }
+
+  addComment(): void {
+
+    const dialogRef = this.dialog.open(ArticleAddComponent, {
+        width: '600px',
+        maxHeight: '600px',
+      }
+    );
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Aftwer closed subscrition');
+      console.log(result);
+    });
+
   }
 
 
