@@ -1,11 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ISnippet} from '../snippet';
 import {SnippetService} from '../snippet.service';
 import { Subscription} from 'rxjs';
-import {CommentAddComponent} from "./comment/comment-add.component";
-import {MatDialog} from "@angular/material/dialog";
-import {ArticleAddComponent} from "../article-add/article-add.component";
+import {CommentAddComponent} from './comment/comment-add.component';
+import {MatDialog} from '@angular/material/dialog';
+import {ArticleAddComponent} from '../article-add/article-add.component';
+import {tap} from 'rxjs/operators';
 
 
 @Component({
@@ -19,14 +20,15 @@ export class SnippetDisplayComponent implements OnInit, OnDestroy {
   snippet: ISnippet;
   snippetSubscription: Subscription;
 
-  constructor(private route: ActivatedRoute, private snippetService: SnippetService) {
+  constructor(private route: ActivatedRoute, private snippetService: SnippetService,
+              private dialog: MatDialog, private router: Router ) {
   }
 
 
   ngOnInit(): void {
     this.snippetSubscription = this.getSnippet(this.titleId);
     // this.snippetId = this.snippet.snippetId;
-    console.log(this.snippetId);
+    // console.log(this.snippetId);
   }
 
   ngOnDestroy(): void {
@@ -40,10 +42,31 @@ export class SnippetDisplayComponent implements OnInit, OnDestroy {
         this.snippet = snippet;
         this.snippetId = snippet.snippetId;
       },
-      error: err => console.log('Error getting Snippets' + err)
+      error: err => console.log('Error getting Snippets ' + err)
     });
   }
 
 
+  updateArticle(): void {
+    const dialogRef = this.dialog.open(ArticleAddComponent, {
+      width: '600px',
+      maxHeight: '600px',
+      data: {title: this.snippet.title, body: this.snippet.snippet, articleId: this.snippet.snippetId}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(this.router.url);
+      this.router.navigate([`/snippets/${this.snippet.snippetId}`]);
+      // Initiate a post request when the dialog has been closed
+    });
+  }
+
+  onDelete(): void {
+    this.snippetService.deleteArticle(this.snippet.snippetId).subscribe({
+      next: snippet => {
+        window.alert('Deletion successful');
+        this.router.navigate(['/snippets']);
+      }
+    });
+  }
 }

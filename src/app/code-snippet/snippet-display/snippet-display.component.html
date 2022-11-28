@@ -6,8 +6,8 @@
     <p *ngIf="snippet.snippet">{{snippet.snippet}}</p>
   </div>
   <div style="">
-    <button mat-stroked-button color="accent" style="margin-right: 10px">UPDATE</button>
-    <button mat-stroked-button color="warn">DELETE</button>
+    <button mat-stroked-button color="accent" style="margin-right: 10px" (click)="updateArticle()">UPDATE</button>
+    <button mat-stroked-button color="warn" (click)="onDelete()">DELETE</button>
   </div>
 <app-comment
   [snippetId] = "snippetId"></app-comment>

@@ -33,23 +33,40 @@ export class SnippetService {
 
 
 
-  addArticle(title: string, body: string): Observable<any>{
+  addArticle(title: string, body: string, articleId: number): Observable<any>{
     const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=UTF-8' });
-    const post: Article = {
-      title,
-      body,
-      userId: 1,
-    };
-    console.log(post);
-
-    return this.http.post(this.articlesUrl, post, {headers} ).pipe(
-      tap(response => {
-      }),
-      catchError(err => {
-        console.log('Post request failed' + err);
-        return throwError(err);
-      })
-    );
+    if (articleId === 0){
+      const post: Article = {
+        title,
+        body,
+        userId: 1,
+      };
+      return this.http.post(this.articlesUrl, post, {headers} ).pipe(
+        tap(response => {
+        }),
+        catchError(err => {
+          console.log('Post request failed' + err);
+          return throwError(err);
+        })
+      );
+    }else{
+      const post: Article = {
+        title,
+        body,
+        userId: 1,
+        id: articleId
+      };
+      console.log(post);
+      const url = `${this.articlesUrl}/${articleId}`;
+      return this.http.put(url, post, {headers} ).pipe(
+        tap(response => {
+        }),
+        catchError(err => {
+          console.log('PUT request failed' + err);
+          return throwError(err);
+        })
+      );
+    }
   }
   getSnippets(): Observable<ISnippet[]> {
     return this.http.get<Article[]>(this.articlesUrl).pipe(
@@ -102,4 +119,10 @@ export class SnippetService {
     return throwError(errorMessage);
   }
 
+  deleteArticle(articleId: number): Observable<any> {
+    return this.http.delete(`${this.articlesUrl}/${articleId}`).pipe(
+      tap(response => {console.log(response); }),
+      catchError(this.handleError)
+    );
+  }
 }

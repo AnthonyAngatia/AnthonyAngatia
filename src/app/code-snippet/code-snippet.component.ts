@@ -44,6 +44,7 @@ export class CodeSnippetComponent implements OnInit {
     const dialogRef = this.dialog.open(ArticleAddComponent, {
         width: '600px',
         maxHeight: '600px',
+      data: {title: "My title", body: "My article", articleId: 0}
       }
     );
     dialogRef.afterClosed().subscribe(result => {
