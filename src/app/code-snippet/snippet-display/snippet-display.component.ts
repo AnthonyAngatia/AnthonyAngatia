@@ -62,11 +62,14 @@ export class SnippetDisplayComponent implements OnInit, OnDestroy {
   }
 
   onDelete(): void {
-    this.snippetService.deleteArticle(this.snippet.snippetId).subscribe({
-      next: snippet => {
-        window.alert('Deletion successful');
-        this.router.navigate(['/snippets']);
-      }
-    });
+    if (window.confirm('This item will be deleted')){
+      this.snippetService.deleteArticle(this.snippet.snippetId).subscribe({
+        next: snippet => {
+          window.alert('Deletion successful');
+          this.router.navigate(['/snippets']);
+        }
+      });
+    }
+
   }
 }

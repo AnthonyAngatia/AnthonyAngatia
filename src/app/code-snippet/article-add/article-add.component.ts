@@ -32,7 +32,7 @@ export class ArticleAddComponent implements OnInit {
   }
 
   save() {
-    this.snippetService.addArticle(this.f.title.value, this.f.body.value, this.f.articleId.value).subscribe(
+    this.snippetService.addOrUpdateArticle(this.f.title.value, this.f.body.value, this.f.articleId.value).subscribe(
       post => {
         window.alert("Article saved: Response from server" + JSON.stringify(post));
         this.dialogRef.close();

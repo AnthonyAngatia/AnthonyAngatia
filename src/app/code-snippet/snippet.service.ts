@@ -16,7 +16,7 @@ export class SnippetService {
 
   }
 
-  transformToSnippet(article: Article): ISnippet{
+  transformToSnippet(article: Article): ISnippet {
     return {
       snippetId: article.id,
       title: article.title,
@@ -29,19 +29,18 @@ export class SnippetService {
       readTime: null
     };
 
-}
+  }
 
 
-
-  addArticle(title: string, body: string, articleId: number): Observable<any>{
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=UTF-8' });
-    if (articleId === 0){
+  addOrUpdateArticle(title: string, body: string, articleId: number): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json; charset=UTF-8'});
+    if (articleId === 0) {
       const post: Article = {
         title,
         body,
         userId: 1,
       };
-      return this.http.post(this.articlesUrl, post, {headers} ).pipe(
+      return this.http.post(this.articlesUrl, post, {headers}).pipe(
         tap(response => {
         }),
         catchError(err => {
@@ -49,30 +48,37 @@ export class SnippetService {
           return throwError(err);
         })
       );
-    }else{
-      const post: Article = {
-        title,
-        body,
-        userId: 1,
-        id: articleId
-      };
-      console.log(post);
-      const url = `${this.articlesUrl}/${articleId}`;
-      return this.http.put(url, post, {headers} ).pipe(
-        tap(response => {
-        }),
-        catchError(err => {
-          console.log('PUT request failed' + err);
-          return throwError(err);
-        })
-      );
+    } else {
+      return this.updateArticle(title, body, articleId);
     }
   }
+
+  private updateArticle(title: string, body: string, articleId: number): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json; charset=UTF-8'});
+
+    const post: Article = {
+      title,
+      body,
+      userId: 1,
+      id: articleId
+    };
+    console.log(post);
+    const url = `${this.articlesUrl}/${articleId}`;
+    return this.http.put(url, post, {headers}).pipe(
+      tap(response => {
+      }),
+      catchError(err => {
+        console.log('PUT request failed' + err);
+        return throwError(err);
+      })
+    );
+  }
+
   getSnippets(): Observable<ISnippet[]> {
     return this.http.get<Article[]>(this.articlesUrl).pipe(
       map(articles => {
         const snippetsArr: ISnippet[] = [];
-        for (const article of articles){
+        for (const article of articles) {
           const x = this.transformToSnippet(article);
           snippetsArr.push(x);
         }
@@ -121,7 +127,9 @@ export class SnippetService {
 
   deleteArticle(articleId: number): Observable<any> {
     return this.http.delete(`${this.articlesUrl}/${articleId}`).pipe(
-      tap(response => {console.log(response); }),
+      tap(response => {
+        console.log(response);
+      }),
       catchError(this.handleError)
     );
   }
