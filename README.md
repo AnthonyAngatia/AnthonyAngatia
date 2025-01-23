@@ -1,10 +1,10 @@
 ![Profile views](https://gpvc.arturio.dev/AnthonyAngatia)  
 
-### Hi there 👋, Anthony here
-#### I am software engineer
+### Whatsup homie 👋, this is Tonie,
+#### Tonie is a problem solver, not that I want problems, but that's what it is.
 ![I am software engineer](github-assets/Programmer.gif)
 
-Anthony Angatia is:
+Tonie is:
  - A passionate IT enthusiast
  - A computer science and Informatics graduate from Strathmore University
 - Loves the art and science of problem solving 🤺.
@@ -12,11 +12,11 @@ Anthony Angatia is:
 
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=AnthonyAngatia&show_icons=true&count_private=true)  
 
-Skills: Angular / Laravel / Android / Spring 
+Skills: Java / Spring / Laravel / Android 
 
-- 🔭 I’m currently working on getting a google certification on mobile application development 
-- 🌱 I’m currently learning Spring 
-- 👯 I’m looking to collaborate on Android and Angular projects 
+- 🔭 I’m currently working on building robust enterprise applications using java 
+- 🌱 I’m currently learning more Java and Spring 
+- 👯 I’m looking to collaborate on any fun project irregardless of the language. I'm happy to learn. 
 - 📫 How to reach me: anthonyangatia@gmail.com 
 
 ![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=AnthonyAngatia)  
