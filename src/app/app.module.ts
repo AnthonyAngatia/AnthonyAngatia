@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireAnalyticsModule} from "@angular/fire/compat/analytics";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
