@@ -36,7 +36,7 @@
 
 <div class="snippets-tags-grid" style="margin:1em;">
   <div class="card card-margin" >
-    <mat-card class="mat-card-snippet" *ngFor="let item of snippets">
+    <mat-card class="mat-card-snippet" appearance="outlined" *ngFor="let item of snippets">
       <a [routerLink]="['/snippets', item.route]">
       <mat-card-header style="cursor: pointer;">
         <mat-card-title>{{ item.title }}</mat-card-title>
@@ -55,7 +55,7 @@
 
   </div>
   <div class="tag-card">
-    <mat-card style="margin: auto;">
+    <mat-card style="margin: auto;" appearance="outlined">
       <mat-card-header style="margin: 0px 0px 12px;">
         <h1 style="margin:auto">Tags</h1>
       </mat-card-header>
