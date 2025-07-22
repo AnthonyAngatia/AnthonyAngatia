@@ -81,18 +81,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Anthony-Angatia:build"
+            "buildTarget": "Anthony-Angatia:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Anthony-Angatia:build:production"
+              "buildTarget": "Anthony-Angatia:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Anthony-Angatia:build"
+            "buildTarget": "Anthony-Angatia:build"
           }
         },
         "test": {
